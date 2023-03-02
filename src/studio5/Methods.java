@@ -1,5 +1,9 @@
 package studio5;
 
+
+
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -16,6 +20,10 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
+		
+		distance = Math.sqrt((Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2)));
+		
+		
 		
 		return distance;
 	}
@@ -35,16 +43,31 @@ public class Methods {
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
 
+		Color bluey = new Color(0, 109, 219);
+		StdDraw.setPenColor(bluey);
+		StdDraw.filledCircle(x,  y,  3.0/4.0 * radius);
+		
+		
 		
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
 
+		Color reddish = new Color(146, 0, 0);
+		StdDraw.setPenColor(reddish);
+		StdDraw.filledCircle(x,y,1.0/2.0 * radius);
+		
+		
+		
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
 
+		Color yellowish = new Color (255, 255, 109);
+		StdDraw.setPenColor(yellowish);
+		StdDraw.filledCircle(x, y, 1.0/4.0 *radius);
+		
 		
 	}
 
@@ -61,7 +84,23 @@ public class Methods {
 	 */
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
-		// TODO: Finish this method
+		// TODO: Finish this method hello source : target h : replacement z
+		
+
+		char [] c = source.toCharArray();
+		
+		for (int i =0; i< c.length; i++) {
+			
+			if (c[i] == target) {
+				result = result + replacement;
+				
+			} else {
+				result = result + c[i];
+			
+				
+			}
+		}
+		
 		
 		return result;
 	}
